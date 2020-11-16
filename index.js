@@ -1,12 +1,37 @@
 // Import modules
 const express = require('express')
+const ejsLayouts = require('express-ejs-layouts')
 
 // Invoke modules
 const app = express()
 
+// Initiate modules
+app.set('view engine', 'ejs')
+app.use(ejsLayouts)
+
 // Create routes
 app.get('/', (req, res) => {
-    res.send('hello from faves-and-hates')
+    res.render('index')
+})
+
+app.get('/faves/animals', (req, res) => {
+    const animals = ['giraffe', 'peacock', 'aligator', 'unicorn']
+    res.render('faveAnimals', { animals })
+})
+
+app.get('/faves/foods', (req, res) => {
+    const foods = ['pizza', 'steak', 'ice cream', 'pasta']
+    res.render('faveFoods', { foods })
+})
+
+app.get('/hates/animals', (req, res) => {
+    const animals = ['cat', 'snake', 'spider', 'demagorgen']
+    res.render('hateAnimals', { animals })
+})
+
+app.get('/hates/foods', (req, res) => {
+    const foods = ['celery', 'raisins', 'yogurt', 'parsley']
+    res.render('hateFoods', { foods })
 })
 
 // Listen command
