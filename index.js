@@ -16,22 +16,22 @@ app.get('/', (req, res) => {
 
 app.get('/faves/animals', (req, res) => {
     const animals = ['giraffe', 'peacock', 'aligator', 'unicorn']
-    res.render('faveAnimals', { animals })
+    res.render('faves/faveAnimals', { animals })
 })
 
 app.get('/faves/foods', (req, res) => {
     const foods = ['pizza', 'steak', 'ice cream', 'pasta']
-    res.render('faveFoods', { foods })
+    res.render('faves/faveFoods', { foods })
 })
 
 app.get('/hates/animals', (req, res) => {
     const animals = ['cat', 'snake', 'spider', 'demagorgen']
-    res.render('hateAnimals', { animals })
+    res.render('hates/hateAnimals', { animals })
 })
 
 app.get('/hates/foods', (req, res) => {
     const foods = ['celery', 'raisins', 'yogurt', 'parsley']
-    res.render('hateFoods', { foods })
+    res.render('hates/hateFoods', { foods })
 })
 
 // Listen command
